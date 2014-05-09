@@ -1,6 +1,6 @@
 Name:		os-refresh-config
-Version:	0.0.8
-Release:	3%{?dist}
+Version:	0.1.5
+Release:	1%{?dist}
 Summary:	Refresh system configuration
 
 License:	ASL 2.0
@@ -12,6 +12,7 @@ BuildRequires:	python-setuptools
 BuildRequires:	python2-devel
 BuildRequires:  python-pbr
 
+Requires:   dib-utils
 Requires:	python-setuptools
 
 %description
@@ -34,6 +35,10 @@ Tool to refresh openstack config changes to service.
 %{python_sitelib}/os_refresh_config*
 
 %changelog
+* Fri May 9 2014 Ben Nemec <bnemec@redhat.com> - 0.1.5-1
+- Update to 0.1.5
+- Add dependency on new dib-utils package
+
 * Mon Feb 24 2014 Steven Dake <sdake@redhat.com> - 0.0.8-3
 - Add python-pbr as a BuildRequires
 
