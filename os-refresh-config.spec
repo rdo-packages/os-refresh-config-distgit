@@ -1,6 +1,6 @@
 Name:		os-refresh-config
 Version:	0.1.5
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Refresh system configuration
 
 License:	ASL 2.0
@@ -17,6 +17,10 @@ Requires:	python-setuptools
 
 %description
 Tool to refresh openstack config changes to service.
+
+#
+# patches_base: 0.1.5
+#
 
 %prep
 
@@ -35,6 +39,9 @@ Tool to refresh openstack config changes to service.
 %{python_sitelib}/os_refresh_config*
 
 %changelog
+* Thu Sep 11 2014 James Slagle <jslagle@redhat.com> - 0.1.5-3
+- Switch to rdopkg
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.1.5-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
