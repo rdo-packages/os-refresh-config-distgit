@@ -1,6 +1,6 @@
 Name:		os-refresh-config
 Version:	0.1.5
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Refresh system configuration
 
 License:	ASL 2.0
@@ -17,6 +17,10 @@ Requires:	python-setuptools
 
 %description
 Tool to refresh openstack config changes to service.
+
+#
+# patches_base: 0.1.5
+#
 
 %prep
 
@@ -35,6 +39,9 @@ Tool to refresh openstack config changes to service.
 %{python_sitelib}/os_refresh_config*
 
 %changelog
+* Thu Sep 11 2014 James Slagle <jslagle@redhat.com> - 0.1.5-2
+- Switch to rdopkg
+
 * Fri May 9 2014 Ben Nemec <bnemec@redhat.com> - 0.1.5-1
 - Update to 0.1.5
 - Add dependency on new dib-utils package
