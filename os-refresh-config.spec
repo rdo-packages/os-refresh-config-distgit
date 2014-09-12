@@ -1,6 +1,6 @@
 Name:		os-refresh-config
-Version:	0.1.5
-Release:	3%{?dist}
+Version:	0.1.7
+Release:	1%{?dist}
 Summary:	Refresh system configuration
 
 License:	ASL 2.0
@@ -39,6 +39,9 @@ Tool to refresh openstack config changes to service.
 %{python_sitelib}/os_refresh_config*
 
 %changelog
+* Fri Sep 12 2014 James Slagle <jslagle@redhat.com> 0.1.7-1
+- Update to upstream 0.1.7
+
 * Thu Sep 11 2014 James Slagle <jslagle@redhat.com> - 0.1.5-3
 - Switch to rdopkg
 
