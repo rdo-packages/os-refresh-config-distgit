@@ -1,5 +1,5 @@
 Name:		os-refresh-config
-Version:	0.1.7
+Version:	0.1.8
 Release:	1%{?dist}
 Summary:	Refresh system configuration
 
@@ -39,6 +39,9 @@ Tool to refresh openstack config changes to service.
 %{python_sitelib}/os_refresh_config*
 
 %changelog
+* Wed Oct 15 2014 James Slagle <jslagle@redhat.com> 0.1.8-1
+- Update to upstream 0.1.8
+
 * Fri Sep 12 2014 James Slagle <jslagle@redhat.com> 0.1.7-1
 - Update to upstream 0.1.7
 
