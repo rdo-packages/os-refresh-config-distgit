@@ -1,6 +1,6 @@
 Name:		os-refresh-config
-Version:	0.1.10
-Release:	2%{?dist}
+Version:	0.1.11
+Release:	1%{?dist}
 Summary:	Refresh system configuration
 
 License:	ASL 2.0
@@ -12,25 +12,24 @@ BuildRequires:	python-setuptools
 BuildRequires:	python2-devel
 BuildRequires:  python-pbr
 
-Requires:   dib-utils
+Requires:   	dib-utils
 Requires:	python-setuptools
 
 %description
 Tool to refresh openstack config changes to service.
-
-#
-# patches_base=+1
-#
 
 %prep
 
 %setup -q -n %{name}-%{version}
 
 %build
-%{__python} setup.py build
+%{__python2} setup.py build
 
 %install
-%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
+
+# remove tests
+rm -fr %{buildroot}%{python2_sitelib}/os_refresh_config/tests
 
 %files
 %doc README.rst
@@ -39,11 +38,8 @@ Tool to refresh openstack config changes to service.
 %{python_sitelib}/os_refresh_config*
 
 %changelog
-* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.1.10-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
-
-* Fri May 08 2015 Mike Burns <mburns@redhat.com> 0.1.10-1
-- Update to upstream 0.1.10
+* Tue Oct 20 2014 James Slagle <jslagle@redhat.com> 0.1.11-1
+- Update to upstream 0.1.11
 
 * Wed Oct 15 2014 James Slagle <jslagle@redhat.com> 0.1.8-1
 - Update to upstream 0.1.8
