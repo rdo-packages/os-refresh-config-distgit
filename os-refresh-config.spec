@@ -1,6 +1,6 @@
 Name:		os-refresh-config
 Version:	0.1.11
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Refresh system configuration
 
 License:	ASL 2.0
@@ -12,6 +12,7 @@ BuildRequires:	python-setuptools
 BuildRequires:	python2-devel
 BuildRequires:  python-pbr
 
+Requires:	python-pbr
 Requires:   	dib-utils
 Requires:	python-setuptools
 
@@ -38,7 +39,10 @@ rm -fr %{buildroot}%{python2_sitelib}/os_refresh_config/tests
 %{python_sitelib}/os_refresh_config*
 
 %changelog
-* Tue Oct 20 2014 James Slagle <jslagle@redhat.com> 0.1.11-1
+* Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.11-2
+- Add Requires: python-pbr
+
+* Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.11-1
 - Update to upstream 0.1.11
 
 * Wed Oct 15 2014 James Slagle <jslagle@redhat.com> 0.1.8-1
