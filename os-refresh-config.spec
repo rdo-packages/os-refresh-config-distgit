@@ -1,6 +1,6 @@
 Name:		os-refresh-config
 Version:	0.1.11
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Refresh system configuration
 
 License:	ASL 2.0
@@ -39,6 +39,9 @@ rm -fr %{buildroot}%{python2_sitelib}/os_refresh_config/tests
 %{python_sitelib}/os_refresh_config*
 
 %changelog
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0.1.11-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.11-2
 - Add Requires: python-pbr
 
