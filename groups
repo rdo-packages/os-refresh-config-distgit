@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-75a4ee793076595cef36d33ac5f303147646d0a7       	os-refresh-config-distgit-core
-f4cb6cd86ac84346c0a6d7c056f8b8c54f3074eb        	os-refresh-config-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+75a4ee793076595cef36d33ac5f303147646d0a7	os-refresh-config-distgit-core
+f4cb6cd86ac84346c0a6d7c056f8b8c54f3074eb	openstack/os-refresh-config-distgit-ptl
+global:Registered-Users                 	Registered Users
