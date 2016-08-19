@@ -31,6 +31,10 @@ Tool to refresh openstack config changes to service.
 
 %install
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
+install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/pre-configure.d
+install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/configure.d
+install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/migration.d
+install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/post-configure.d
 
 # remove tests
 rm -fr %{buildroot}%{python_sitelib}/os_refresh_config/tests
@@ -40,5 +44,6 @@ rm -fr %{buildroot}%{python_sitelib}/os_refresh_config/tests
 %doc LICENSE
 %{_bindir}/os-refresh-config
 %{python_sitelib}/os_refresh_config*
+%{_libexecdir}/%{name}
 
 %changelog
