@@ -1,3 +1,4 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:		os-refresh-config
 Version:	XXX
 Release:	XXX
