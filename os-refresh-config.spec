@@ -1,7 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:		os-refresh-config
-Version:	XXX
-Release:	XXX
+Version:	5.0.0
+Release:	1%{?dist}
 Summary:	Refresh system configuration
 
 License:	ASL 2.0
@@ -48,3 +48,6 @@ rm -fr %{buildroot}%{python_sitelib}/os_refresh_config/tests
 %{_libexecdir}/%{name}
 
 %changelog
+* Thu Oct 06 2016 Haikel Guemar <hguemar@fedoraproject.org> 5.0.0-1
+- Update to 5.0.0
+
