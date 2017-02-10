@@ -15,6 +15,7 @@ BuildRequires:  python-pbr
 
 Requires:       dib-utils
 Requires:       python-setuptools
+Requires:       python-psutil
 
 %description
 Tool to refresh openstack config changes to service.
