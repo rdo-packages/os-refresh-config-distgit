@@ -1,6 +1,6 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:		os-refresh-config
-Version:	5.1.0
+Version:	5.2.0
 Release:	1%{?dist}
 Summary:	Refresh system configuration
 
@@ -48,6 +48,9 @@ rm -fr %{buildroot}%{python_sitelib}/os_refresh_config/tests
 %{_libexecdir}/%{name}
 
 %changelog
+* Thu Apr 27 2017 rdo-trunk <javier.pena@redhat.com> 5.2.0-1
+- Update to 5.2.0
+
 * Tue Jan 10 2017 Alfredo Moralejo <amoralej@redhat.com> 5.1.0-1
 - Update to 5.1.0
 
