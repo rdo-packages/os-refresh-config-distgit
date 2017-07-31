@@ -14,7 +14,6 @@ BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 
 Requires:       dib-utils
-Requires:       python-setuptools
 Requires:       python-psutil
 
 %description
