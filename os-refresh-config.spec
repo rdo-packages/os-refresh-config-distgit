@@ -12,9 +12,9 @@ BuildArch:      noarch
 BuildRequires:  python-setuptools
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
+BuildRequires:  git
 
 Requires:       dib-utils
-Requires:       python-setuptools
 Requires:       python-psutil
 
 %description
@@ -22,7 +22,7 @@ Tool to refresh openstack config changes to service.
 
 %prep
 
-%setup -q -n %{name}-%{upstream_version}
+%autosetup -n %{name}-%{upstream_version} -S git
 
 %build
 %{__python} setup.py build
