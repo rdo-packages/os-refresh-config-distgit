@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_a74fa391",
+        "filename": "os-refresh-config.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-08-18T15:54:34Z",
+      "side": 1,
+      "message": "pbr is never used at runtime",
+      "revId": "a860639e973b9de55f305452402c8c5d8bbe0e85",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
