@@ -16,6 +16,24 @@
       "revId": "a860639e973b9de55f305452402c8c5d8bbe0e85",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3a03cab9",
+        "filename": "os-refresh-config.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2017-08-21T05:14:57Z",
+      "side": 1,
+      "message": "Ok, will abandon this patch.",
+      "parentUuid": "5a890539_a74fa391",
+      "revId": "a860639e973b9de55f305452402c8c5d8bbe0e85",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
