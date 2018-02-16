@@ -9,13 +9,13 @@ URL:            http://pypi.python.org/pypi/%{name}
 Source0:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  python-setuptools
+BuildRequires:  python2-setuptools
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
+BuildRequires:  python2-pbr
 BuildRequires:  git
 
 Requires:       dib-utils
-Requires:       python-psutil
+Requires:       python2-psutil
 
 %description
 Tool to refresh openstack config changes to service.
