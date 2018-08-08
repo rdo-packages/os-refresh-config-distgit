@@ -1,4 +1,18 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pydefault 3
+%else
+%global pydefault 2
+%endif
+
+%global pydefault_bin python%{pydefault}
+%global pydefault_sitelib %python%{pydefault}_sitelib
+%global pydefault_install %py%{pydefault}_install
+%global pydefault_build %py%{pydefault}_build
+# End of macros for py2/py3 compatibility
+
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:           os-refresh-config
 Version:        XXX
 Release:        XXX
@@ -9,13 +23,16 @@ URL:            http://pypi.python.org/pypi/%{name}
 Source0:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  python2-setuptools
-BuildRequires:  python2-devel
-BuildRequires:  python2-pbr
+
 BuildRequires:  git
 
 Requires:       dib-utils
-Requires:       python2-psutil
+
+BuildRequires:  python%{pydefault}-setuptools
+BuildRequires:  python%{pydefault}-devel
+BuildRequires:  python%{pydefault}-pbr
+
+Requires:       python%{pydefault}-psutil
 
 %description
 Tool to refresh openstack config changes to service.
@@ -25,10 +42,10 @@ Tool to refresh openstack config changes to service.
 %autosetup -n %{name}-%{upstream_version} -S git
 
 %build
-%{__python} setup.py build
+%{pydefault_build}
 
 %install
-%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{pydefault_install}
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/pre-configure.d
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/configure.d
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/migration.d
@@ -41,7 +58,7 @@ rm -fr %{buildroot}%{python_sitelib}/os_refresh_config/tests
 %doc README.rst
 %doc LICENSE
 %{_bindir}/os-refresh-config
-%{python_sitelib}/os_refresh_config*
 %{_libexecdir}/%{name}
+%{pydefault_sitelib}/os_refresh_config*
 
 %changelog
