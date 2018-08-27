@@ -1,7 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:           os-refresh-config
-Version:        XXX
-Release:        XXX
+Version:        9.1.0
+Release:        1%{?dist}
 Summary:        Refresh system configuration
 
 License:        ASL 2.0
@@ -45,3 +45,6 @@ rm -fr %{buildroot}%{python_sitelib}/os_refresh_config/tests
 %{_libexecdir}/%{name}
 
 %changelog
+* Mon Aug 27 2018 RDO <dev@lists.rdoproject.org> 9.1.0-1
+- Update to 9.1.0
+
