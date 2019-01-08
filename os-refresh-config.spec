@@ -1,14 +1,14 @@
 # Macros for py2/py3 compatibility
 %if 0%{?fedora} || 0%{?rhel} > 7
-%global pydefault 3
+%global pyver 3
 %else
-%global pydefault 2
+%global pyver 2
 %endif
 
-%global pydefault_bin python%{pydefault}
-%global pydefault_sitelib %python%{pydefault}_sitelib
-%global pydefault_install %py%{pydefault}_install
-%global pydefault_build %py%{pydefault}_build
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
 # End of macros for py2/py3 compatibility
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -28,11 +28,11 @@ BuildRequires:  git
 
 Requires:       dib-utils
 
-BuildRequires:  python%{pydefault}-setuptools
-BuildRequires:  python%{pydefault}-devel
-BuildRequires:  python%{pydefault}-pbr
+BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-pbr
 
-Requires:       python%{pydefault}-psutil
+Requires:       python%{pyver}-psutil
 
 %description
 Tool to refresh openstack config changes to service.
@@ -42,10 +42,10 @@ Tool to refresh openstack config changes to service.
 %autosetup -n %{name}-%{upstream_version} -S git
 
 %build
-%{pydefault_build}
+%{pyver_build}
 
 %install
-%{pydefault_install}
+%{pyver_install}
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/pre-configure.d
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/configure.d
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/migration.d
@@ -59,6 +59,6 @@ rm -fr %{buildroot}%{python_sitelib}/os_refresh_config/tests
 %doc LICENSE
 %{_bindir}/os-refresh-config
 %{_libexecdir}/%{name}
-%{pydefault_sitelib}/os_refresh_config*
+%{pyver_sitelib}/os_refresh_config*
 
 %changelog
