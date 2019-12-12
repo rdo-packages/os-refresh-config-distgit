@@ -14,7 +14,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           os-refresh-config
-Version:        10.2.1
+Version:        10.2.2
 Release:        1%{?dist}
 Summary:        Refresh system configuration
 
@@ -62,6 +62,9 @@ rm -fr %{buildroot}%{python_sitelib}/os_refresh_config/tests
 %{pyver_sitelib}/os_refresh_config*
 
 %changelog
+* Thu Dec 12 2019 RDO <dev@lists.rdoproject.org> 10.2.2-1
+- Update to 10.2.2
+
 * Wed Sep 11 2019 RDO <dev@lists.rdoproject.org> 10.2.1-1
 - Update to 10.2.1
 
