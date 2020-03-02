@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e92996dc_261b924f",
+        "filename": "os-refresh-config.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2020-03-02T14:59:54Z",
+      "side": 1,
+      "message": "pyver_sitelib",
+      "range": {
+        "startLine": 55,
+        "startChar": 21,
+        "endLine": 55,
+        "endChar": 35
+      },
+      "revId": "67dd92b65c6f66fff209dad993a7502f8a3a8bfa",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
