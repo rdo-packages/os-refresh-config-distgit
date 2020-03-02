@@ -1,6 +1,6 @@
 # Macros for py2/py3 compatibility
 %if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver 3
+%global pyver %{python3_pkgversion}
 %else
 %global pyver 2
 %endif
@@ -52,7 +52,7 @@ install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/migration.d
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/post-configure.d
 
 # remove tests
-rm -fr %{buildroot}%{python_sitelib}/os_refresh_config/tests
+rm -fr %{buildroot}%{pyver_sitelib}/os_refresh_config/tests
 
 %files
 %doc README.rst
