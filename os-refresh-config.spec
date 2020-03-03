@@ -64,4 +64,3 @@ rm -fr %{buildroot}%{pyver_sitelib}/os_refresh_config/tests
 %changelog
 * Mon Oct 21 2019 RDO <dev@lists.rdoproject.org> 10.4.0-1
 - Update to 10.4.0
-
