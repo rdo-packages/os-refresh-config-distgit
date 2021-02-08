@@ -1,0 +1,8 @@
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Mon, 08 Feb 2021 14:51:30 +0000
+Reviewed-on: https://review.rdoproject.org/r/31881
+Project: openstack/os-refresh-config-distgit
+Branch: refs/heads/train-rdo
