@@ -2,8 +2,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           os-refresh-config
-Version:        XXX
-Release:        XXX
+Version:        11.0.0
+Release:        1%{?dist}
 Summary:        Refresh system configuration
 
 License:        ASL 2.0
@@ -50,3 +50,6 @@ rm -fr %{buildroot}%{python3_sitelib}/os_refresh_config/tests
 %{python3_sitelib}/os_refresh_config*
 
 %changelog
+* Thu Mar 11 2021 RDO <dev@lists.rdoproject.org> 11.0.0-1
+- Update to 11.0.0
+
