@@ -2,7 +2,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           os-refresh-config
-Version:        12.0.0
+Version:        12.0.1
 Release:        1%{?dist}
 Summary:        Refresh system configuration
 
@@ -50,6 +50,9 @@ rm -fr %{buildroot}%{python3_sitelib}/os_refresh_config/tests
 %{python3_sitelib}/os_refresh_config*
 
 %changelog
+* Thu Jun 03 2021 RDO <dev@lists.rdoproject.org> 12.0.1-1
+- Update to 12.0.1
+
 * Thu Jan 14 2021 RDO <dev@lists.rdoproject.org> 12.0.0-1
 - Update to 12.0.0
 
