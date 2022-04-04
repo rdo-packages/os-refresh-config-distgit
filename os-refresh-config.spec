@@ -1,11 +1,11 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x4c29ff0e437f3351fd82bdf47c5a3bc787dc7035
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           os-refresh-config
-Version:        XXX
-Release:        XXX
+Version:        13.0.1
+Release:        1%{?dist}
 Summary:        Refresh system configuration
 
 License:        ASL 2.0
@@ -67,3 +67,6 @@ rm -fr %{buildroot}%{python3_sitelib}/os_refresh_config/tests
 %{python3_sitelib}/os_refresh_config*
 
 %changelog
+* Mon Apr 04 2022 RDO <dev@lists.rdoproject.org> 13.0.1-1
+- Update to 13.0.1
+
