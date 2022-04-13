@@ -1,10 +1,10 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x4c29ff0e437f3351fd82bdf47c5a3bc787dc7035
+%global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           os-refresh-config
-Version:        13.0.1
+Version:        13.1.0
 Release:        1%{?dist}
 Summary:        Refresh system configuration
 
@@ -67,6 +67,9 @@ rm -fr %{buildroot}%{python3_sitelib}/os_refresh_config/tests
 %{python3_sitelib}/os_refresh_config*
 
 %changelog
+* Wed Apr 13 2022 RDO <dev@lists.rdoproject.org> 13.1.0-1
+- Update to 13.1.0
+
 * Mon Apr 04 2022 RDO <dev@lists.rdoproject.org> 13.0.1-1
 - Update to 13.0.1
 
