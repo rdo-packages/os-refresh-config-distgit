@@ -2,13 +2,15 @@
 %global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order bashate sphinx openstackdocstheme
 
 Name:           os-refresh-config
 Version:        XXX
 Release:        XXX
 Summary:        Refresh system configuration
 
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            http://pypi.python.org/pypi/%{name}
 Source0:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
@@ -29,12 +31,8 @@ BuildRequires:  git-core
 
 Requires:       dib-utils
 
-BuildRequires:  python3-setuptools
 BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
-
-Requires:       python3-psutil
-
+BuildRequires:  pyproject-rpm-macros
 %description
 Tool to refresh openstack config changes to service.
 
@@ -46,11 +44,28 @@ Tool to refresh openstack config changes to service.
 
 %autosetup -n %{name}-%{upstream_version} -S git
 
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs}; do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+%generate_buildrequires
+%pyproject_buildrequires -t -e %{default_toxenv}
+
 %build
-%{py3_build}
+%pyproject_wheel
 
 %install
-%{py3_install}
+%pyproject_install
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/pre-configure.d
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/configure.d
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/migration.d
