@@ -8,7 +8,7 @@ Version:        XXX
 Release:        XXX
 Summary:        Refresh system configuration
 
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            http://pypi.python.org/pypi/%{name}
 Source0:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
@@ -29,12 +29,8 @@ BuildRequires:  git-core
 
 Requires:       dib-utils
 
-BuildRequires:  python3-setuptools
 BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
-
-Requires:       python3-psutil
-
+BuildRequires:  pyproject-rpm-macros
 %description
 Tool to refresh openstack config changes to service.
 
@@ -46,11 +42,14 @@ Tool to refresh openstack config changes to service.
 
 %autosetup -n %{name}-%{upstream_version} -S git
 
+%generate_buildrequires
+%pyproject_buildrequires requirements.txt
+
 %build
-%{py3_build}
+%pyproject_wheel
 
 %install
-%{py3_install}
+%pyproject_install
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/pre-configure.d
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/configure.d
 install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/migration.d
