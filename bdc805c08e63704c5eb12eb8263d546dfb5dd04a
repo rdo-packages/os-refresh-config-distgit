@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d978b79_ac4b7392",
+        "filename": "os-refresh-config.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-07-31T15:44:05Z",
+      "side": 1,
+      "message": "It\u0027s not building docs, so let\u0027s add sphinx openstackdocstheme to excluded_brs",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 22
+      },
+      "revId": "bdc805c08e63704c5eb12eb8263d546dfb5dd04a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
