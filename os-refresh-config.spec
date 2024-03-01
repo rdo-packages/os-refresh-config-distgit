@@ -84,3 +84,4 @@ install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/post-configure.d
 %exclude %{python3_sitelib}/os_refresh_config/tests
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/os-refresh-config/commit/4b510162e573dbde407bc362b9cdfae74397d322
