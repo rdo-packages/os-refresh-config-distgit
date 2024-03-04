@@ -27,8 +27,6 @@ BuildRequires:  openstack-macros
 
 BuildRequires:  git-core
 
-Requires:       dib-utils
-
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
@@ -63,6 +61,7 @@ rm -fr %{buildroot}%{python3_sitelib}/os_refresh_config/tests
 %doc README.rst
 %doc LICENSE
 %{_bindir}/os-refresh-config
+%{_bindir}/dib-run-parts
 %{_libexecdir}/%{name}
 %{python3_sitelib}/os_refresh_config*
 
