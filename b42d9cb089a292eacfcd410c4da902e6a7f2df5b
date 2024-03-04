@@ -87,6 +87,30 @@
       },
       "revId": "b42d9cb089a292eacfcd410c4da902e6a7f2df5b",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7b6c128_2fb7231b",
+        "filename": "os-refresh-config.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2024-03-04T11:34:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43c33abd_b26a4b91",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 5
+      },
+      "revId": "b42d9cb089a292eacfcd410c4da902e6a7f2df5b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
