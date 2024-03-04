@@ -39,6 +39,30 @@
       },
       "revId": "b42d9cb089a292eacfcd410c4da902e6a7f2df5b",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "588fde13_6a9b8890",
+        "filename": "os-refresh-config.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2024-03-04T11:23:04Z",
+      "side": 1,
+      "message": "one less requiring dib-utils\nStill 2 other projects\n$ dnf repoquery --whatrequires dib-utils\nLast metadata expiration check: 0:01:18 ago on Mon Mar  4 11:19:59 2024.\nos-refresh-config-0:13.2.1-0.20240129170308.7292959.el9.noarch\nos-refresh-config-0:13.2.1-0.20240129170308.7292959.el9.src\npython3-heat-agent-0:7.1.0-0.20240206011329.22c555f.el9.noarch\nsahara-image-elements-1:19.0.1-0.20231103074814.2bfc66f.el9.noarch\nsahara-image-elements-1:19.0.1-0.20231103074814.2bfc66f.el9.src",
+      "parentUuid": "9c0aa6bb_97375b44",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 5
+      },
+      "revId": "b42d9cb089a292eacfcd410c4da902e6a7f2df5b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
