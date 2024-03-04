@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "497931c0_e73e872c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2024-03-04T11:19:10Z",
+      "side": 1,
+      "message": "Actually, we still have dib-utils in rdo pinned to latest commit. We should retire it at least from caracal",
+      "revId": "b42d9cb089a292eacfcd410c4da902e6a7f2df5b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
