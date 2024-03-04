@@ -79,6 +79,7 @@ install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/post-configure.d
 %doc README.rst
 %doc LICENSE
 %{_bindir}/os-refresh-config
+%{_bindir}/dib-run-parts
 %{_libexecdir}/%{name}
 %{python3_sitelib}/os_refresh_config*
 %exclude %{python3_sitelib}/os_refresh_config/tests
