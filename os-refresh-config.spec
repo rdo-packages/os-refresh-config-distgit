@@ -1,18 +1,26 @@
-%{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+# Building commit snap so we can not check gpg signature
+%global sources_gpg 0
 %global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order bashate sphinx openstackdocstheme
 
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{!?upstream_version: %global upstream_version %{commit}}
+%global commit 4b510162e573dbde407bc362b9cdfae74397d322
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+# DO NOT REMOVE ALPHATAG
+%global alphatag .%{shortcommit}git
+
+%{?dlrn: %global tarsources %{name}-%{upstream_version}}
+%{!?dlrn: %global tarsources %{name}}
 
 Name:           os-refresh-config
-Version:        XXX
-Release:        XXX
+Version:        13.2.1
+Release:        0.1%{?alphatag}%{?dist}
 Summary:        Refresh system configuration
 
 License:        Apache-2.0
 URL:            http://pypi.python.org/pypi/%{name}
-Source0:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
+Source0:        http://opendev.org/openstack/%{name}/archive/%{upstream_version}.tar.gz#/%{name}-%{shortcommit}.tar.gz
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
 Source101:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz.asc
@@ -40,7 +48,7 @@ Tool to refresh openstack config changes to service.
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
 
-%autosetup -n %{name}-%{upstream_version} -S git
+%autosetup -n %{tarsources} -S git
 
 sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
 sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
@@ -83,3 +91,5 @@ install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/post-configure.d
 %exclude %{python3_sitelib}/os_refresh_config/tests
 
 %changelog
+* Fri Apr 19 2024 Alfredo Moralejo <amoralej@redhat.com> 13.2.1-0.1.4b510162git
+- Rebuild of pre 13.2.1 release (4b510162e573dbde407bc362b9cdfae74397d322)
