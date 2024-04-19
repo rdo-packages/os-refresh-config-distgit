@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "c0754dbdd3f604f6569d6dcc20a69d3260f013f3",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c159440_18c616a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2024-04-19T09:14:58Z",
+      "side": 1,
+      "message": "release is created now",
+      "revId": "c0754dbdd3f604f6569d6dcc20a69d3260f013f3",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
