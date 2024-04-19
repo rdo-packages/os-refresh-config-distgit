@@ -6,8 +6,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           os-refresh-config
-Version:        XXX
-Release:        XXX
+Version:        14.0.0
+Release:        1%{?dist}
 Summary:        Refresh system configuration
 
 License:        Apache-2.0
@@ -83,3 +83,6 @@ install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/post-configure.d
 %exclude %{python3_sitelib}/os_refresh_config/tests
 
 %changelog
+* Fri Apr 19 2024 RDO <dev@lists.rdoproject.org> 14.0.0-1
+- Update to 14.0.0
+
