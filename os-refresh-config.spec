@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0xf8675126e2411e7748dd46662fc2093e4682645f
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order bashate sphinx openstackdocstheme
 
@@ -8,8 +8,8 @@
 %{!?dlrn: %global tarsources os_refresh_config}
 
 Name:           os-refresh-config
-Version:        XXX
-Release:        XXX
+Version:        14.0.0
+Release:        1%{?dist}
 Summary:        Refresh system configuration
 
 License:        Apache-2.0
@@ -85,3 +85,6 @@ install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/post-configure.d
 %exclude %{python3_sitelib}/os_refresh_config/tests
 
 %changelog
+* Fri Apr 19 2024 RDO <dev@lists.rdoproject.org> 14.0.0-1
+- Update to 14.0.0
+
