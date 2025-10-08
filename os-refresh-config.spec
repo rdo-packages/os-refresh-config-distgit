@@ -86,3 +86,4 @@ install -d -m 755 %{buildroot}%{_libexecdir}/%{name}/post-configure.d
 * Fri Apr 19 2024 RDO <dev@lists.rdoproject.org> 14.0.0-1
 - Update to 14.0.0
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/os-refresh-config/commit/bfdbef4f998ea2d7fcf57c134def597a3ae11aa7
